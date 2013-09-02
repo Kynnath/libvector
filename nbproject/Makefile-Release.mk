@@ -14,11 +14,11 @@ GREP=grep
 NM=nm
 CCADMIN=CCadmin
 RANLIB=ranlib
-CC=gcc.exe
-CCC=g++.exe
-CXX=g++.exe
+CC=gcc
+CCC=g++
+CXX=g++
 FC=gfortran
-AS=as.exe
+AS=as
 
 # Macros
 CND_PLATFORM=MinGW-Windows
@@ -62,13 +62,13 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibvector.a
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk lib/liblibvector.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibvector.a: ${OBJECTFILES}
-	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibvector.a
-	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibvector.a ${OBJECTFILES} 
-	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibvector.a
+lib/liblibvector.a: ${OBJECTFILES}
+	${MKDIR} -p lib
+	${RM} lib/liblibvector.a
+	${AR} -rv lib/liblibvector.a ${OBJECTFILES} 
+	$(RANLIB) lib/liblibvector.a
 
 ${OBJECTDIR}/src/Vector3.o: src/Vector3.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
@@ -116,7 +116,7 @@ ${OBJECTDIR}/src/Vector3_nomain.o: ${OBJECTDIR}/src/Vector3.o src/Vector3.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibvector.a
+	${RM} lib/liblibvector.a
 
 # Subprojects
 .clean-subprojects:

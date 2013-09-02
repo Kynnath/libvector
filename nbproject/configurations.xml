@@ -53,6 +53,7 @@
           <warningLevel>2</warningLevel>
         </ccTool>
         <archiverTool>
+          <output>lib/liblibvector-d.a</output>
         </archiverTool>
       </compileType>
       <folder path="TestFiles/f1">
@@ -101,6 +102,7 @@
           <developmentMode>5</developmentMode>
         </asmTool>
         <archiverTool>
+          <output>lib/liblibvector.a</output>
         </archiverTool>
       </compileType>
       <folder path="TestFiles/f1">
