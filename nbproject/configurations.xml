@@ -36,7 +36,7 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>C:\Users\JoPe\Documents\NetBeansProjects\libvector\src</Elem>
+    <Elem>src</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

@@ -10,7 +10,7 @@
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>C:\Users\JoPe\Documents\NetBeansProjects\libvector\src</sourceRootElem>
+                <sourceRootElem>src</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
