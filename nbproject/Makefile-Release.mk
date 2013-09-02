@@ -73,7 +73,7 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibvector.a: ${OBJECTFILES}
 ${OBJECTDIR}/src/Vector3.o: src/Vector3.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -Wall -s -std=c++11 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Vector3.o src/Vector3.cpp
+	$(COMPILE.cc) -O3 -Wall -s -std=c++11 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Vector3.o src/Vector3.cpp
 
 # Subprojects
 .build-subprojects:
@@ -88,7 +88,7 @@ ${TESTDIR}/TestFiles/f1: ${TESTDIR}/src/tests/VectorTest.o ${OBJECTFILES:%.o=%_n
 ${TESTDIR}/src/tests/VectorTest.o: src/tests/VectorTest.cpp 
 	${MKDIR} -p ${TESTDIR}/src/tests
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -Wall -s -I. -std=c++11 -MMD -MP -MF $@.d -o ${TESTDIR}/src/tests/VectorTest.o src/tests/VectorTest.cpp
+	$(COMPILE.cc) -O3 -Wall -s -I. -std=c++11 -MMD -MP -MF $@.d -o ${TESTDIR}/src/tests/VectorTest.o src/tests/VectorTest.cpp
 
 
 ${OBJECTDIR}/src/Vector3_nomain.o: ${OBJECTDIR}/src/Vector3.o src/Vector3.cpp 
@@ -99,7 +99,7 @@ ${OBJECTDIR}/src/Vector3_nomain.o: ${OBJECTDIR}/src/Vector3.o src/Vector3.cpp
 	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
 	then  \
 	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O2 -Wall -s -std=c++11 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Vector3_nomain.o src/Vector3.cpp;\
+	    $(COMPILE.cc) -O3 -Wall -s -std=c++11 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Vector3_nomain.o src/Vector3.cpp;\
 	else  \
 	    ${CP} ${OBJECTDIR}/src/Vector3.o ${OBJECTDIR}/src/Vector3_nomain.o;\
 	fi
