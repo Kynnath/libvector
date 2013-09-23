@@ -12,6 +12,7 @@
             <sourceRootList>
                 <sourceRootElem>../../../../juan.garibotti/Documents/NetBeansProjects/libvector/src</sourceRootElem>
                 <sourceRootElem>../../../../juan.garibotti/Documents/NetBeansProjects/libvector/include</sourceRootElem>
+                <sourceRootElem>include/VEC</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
