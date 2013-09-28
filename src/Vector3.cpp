@@ -7,17 +7,20 @@
 
 #include "VEC/Vector3.hpp"
 
+#include <cassert>
 #include <cmath>
 
 namespace vec
 {
     double & Vector3::operator []( int const& i_arrayIndex )
     {
+        assert( i_arrayIndex >= 0 && i_arrayIndex < 3 );
         return m_data[ i_arrayIndex ];
     }
 
     double const& Vector3::operator []( int const& i_arrayIndex ) const
     {
+        assert( i_arrayIndex >= 0 && i_arrayIndex < 3 );
         return m_data[ i_arrayIndex ];
     }
 
