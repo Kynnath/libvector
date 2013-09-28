@@ -47,7 +47,7 @@ namespace vec
 
     double Vector3::Magnitude() const
     {
-        return sqrt( m_data[ 0 ] * m_data[ 0 ] + m_data[ 1 ] * m_data[ 1 ] + m_data[ 2 ] * m_data[ 2 ] );
+        return sqrt( DotProduct( *this ) );
     }
 
     double Vector3::DotProduct( Vector3 const& i_rhs ) const

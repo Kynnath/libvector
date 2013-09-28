@@ -44,7 +44,7 @@ namespace vec
 
     double Vector2::Magnitude() const
     {
-        return sqrt( m_data[ 0 ] * m_data[ 0 ] + m_data[ 1 ] * m_data[ 1 ] );
+        return sqrt( DotProduct( *this ) );
     }
 
     double Vector2::DotProduct( Vector2 const& i_rhs ) const
