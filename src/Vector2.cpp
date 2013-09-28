@@ -11,42 +11,47 @@
 
 namespace vec
 {
-    Vector2::Vector2( double const& i_x, double const& i_y )
-    : x( i_x )
-    , y( i_y )
-    {}
+    double & Vector2::operator []( int const& i_arrayIndex )
+    {
+        return m_data[ i_arrayIndex ];
+    }
+
+    double const& Vector2::operator []( int const& i_arrayIndex ) const
+    {
+        return m_data[ i_arrayIndex ];
+    }
 
     void Vector2::Add( Vector2 const& i_rhs )
     {
-        x += i_rhs.x;
-        y += i_rhs.y;
+        m_data[ 0 ] += i_rhs[ 0 ];
+        m_data[ 1 ] += i_rhs[ 1 ];
     }
 
     void Vector2::Subtract( Vector2 const& i_rhs )
     {
-        x -= i_rhs.x;
-        y -= i_rhs.y;
+        m_data[ 0 ] -= i_rhs[ 0 ];
+        m_data[ 1 ] -= i_rhs[ 1 ];
     }
 
     void Vector2::Scale( double const& i_scaleFactor )
     {
-        x *= i_scaleFactor;
-        y *= i_scaleFactor;
+        m_data[ 0 ] *= i_scaleFactor;
+        m_data[ 1 ] *= i_scaleFactor;
     }
 
     double Vector2::Magnitude() const
     {
-        return sqrt( x * x + y * y );
+        return sqrt( m_data[ 0 ] * m_data[ 0 ] + m_data[ 1 ] * m_data[ 1 ] );
     }
 
     double Vector2::DotProduct( Vector2 const& i_rhs ) const
     {
-        return ( x * i_rhs.x + y * i_rhs.y );
+        return ( m_data[ 0 ] * i_rhs[ 0 ] + m_data[ 1 ] * i_rhs[ 1 ] );
     }
 
     bool Vector2::Equals( Vector2 const& i_rhs ) const
     {
-        return ( x == i_rhs.x && y == i_rhs.y );
+        return ( m_data[ 0 ] == i_rhs[ 0 ] && m_data[ 1 ] == i_rhs[ 1 ] );
     }
 
     Vector2 Add( Vector2 i_lhs, Vector2 const& i_rhs )

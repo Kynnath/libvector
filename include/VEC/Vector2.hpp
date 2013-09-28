@@ -12,10 +12,11 @@ namespace vec
 {
     struct Vector2
     {
-        double x, y;
+        double m_data[ 2 ];
 
         Vector2() = default;
-        Vector2( double const& i_x, double const& i_y );
+        double & operator[]( int const& i_arrayIndex );
+        double const& operator[]( int const& i_arrayIndex ) const;
         void Add( Vector2 const& i_rhs );
         void Subtract( Vector2 const& i_rhs );
         void Scale( double const& i_scaleFactor );

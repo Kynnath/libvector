@@ -11,46 +11,50 @@
 
 namespace vec
 {
-    Vector3::Vector3( double const& i_x, double const& i_y, double const& i_z )
-    : x( i_x )
-    , y( i_y )
-    , z( i_z )
-    {}
+    double & Vector3::operator []( int const& i_arrayIndex )
+    {
+        return m_data[ i_arrayIndex ];
+    }
+
+    double const& Vector3::operator []( int const& i_arrayIndex ) const
+    {
+        return m_data[ i_arrayIndex ];
+    }
 
     void Vector3::Add( Vector3 const& i_rhs )
     {
-        x += i_rhs.x;
-        y += i_rhs.y;
-        z += i_rhs.z;
+        m_data[ 0 ] += i_rhs[ 0 ];
+        m_data[ 1 ] += i_rhs[ 1 ];
+        m_data[ 2 ] += i_rhs[ 2 ];
     }
 
     void Vector3::Subtract( Vector3 const& i_rhs )
     {
-        x -= i_rhs.x;
-        y -= i_rhs.y;
-        z -= i_rhs.z;
+        m_data[ 0 ] -= i_rhs[ 0 ];
+        m_data[ 1 ] -= i_rhs[ 1 ];
+        m_data[ 2 ] -= i_rhs[ 2 ];
     }
 
     void Vector3::Scale( double const& i_scaleFactor )
     {
-        x *= i_scaleFactor;
-        y *= i_scaleFactor;
-        z *= i_scaleFactor;
+        m_data[ 0 ] *= i_scaleFactor;
+        m_data[ 1 ] *= i_scaleFactor;
+        m_data[ 2 ] *= i_scaleFactor;
     }
 
     double Vector3::Magnitude() const
     {
-        return sqrt( x * x + y * y + z * z );
+        return sqrt( m_data[ 0 ] * m_data[ 0 ] + m_data[ 1 ] * m_data[ 1 ] + m_data[ 2 ] * m_data[ 2 ] );
     }
 
     double Vector3::DotProduct( Vector3 const& i_rhs ) const
     {
-        return ( x * i_rhs.x + y * i_rhs.y + z * i_rhs.z );
+        return ( m_data[ 0 ] * i_rhs[ 0 ] + m_data[ 1 ] * i_rhs[ 1 ] + m_data[ 2 ] * i_rhs[ 2 ] );
     }
 
     bool Vector3::Equals( Vector3 const& i_rhs ) const
     {
-        return ( x == i_rhs.x && y == i_rhs.y && z == i_rhs.z );
+        return ( m_data[ 0 ] == i_rhs[ 0 ] && m_data[ 1 ] == i_rhs[ 1 ] && m_data[ 2 ] == i_rhs[ 2 ] );
     }
 
     Vector3 Add( Vector3 i_lhs, Vector3 const& i_rhs )
@@ -78,10 +82,12 @@ namespace vec
 
     Vector3 CrossProduct( Vector3 const& i_lhs, Vector3 const& i_rhs )
     {
-        double xComponent ( i_lhs.y * i_rhs.z - i_lhs.z * i_rhs.y );
-        double yComponent ( i_lhs.z * i_rhs.x - i_lhs.x * i_rhs.z );
-        double zComponent ( i_lhs.x * i_rhs.y - i_lhs.y * i_rhs.x );
+        double const xComponent ( i_lhs[ 1 ] * i_rhs[ 2 ] - i_lhs[ 2 ] * i_rhs[ 1 ] );
+        double const yComponent ( i_lhs[ 2 ] * i_rhs[ 0 ] - i_lhs[ 0 ] * i_rhs[ 2 ] );
+        double const zComponent ( i_lhs[ 0 ] * i_rhs[ 1 ] - i_lhs[ 1 ] * i_rhs[ 0 ] );
 
-        return Vector3( xComponent, yComponent, zComponent );
+        Vector3 const crossProduct = { { xComponent, yComponent, zComponent } };
+
+        return crossProduct;
     }
 }

@@ -12,10 +12,11 @@ namespace vec
 {
     struct Vector3
     {
-        double x, y, z;
+        double m_data[ 3 ];
 
         Vector3() = default;
-        Vector3( double const& i_x, double const& i_y, double const& i_z );
+        double & operator[]( int const& i_arrayIndex );
+        double const& operator[]( int const& i_arrayIndex ) const;
         void Add( Vector3 const& i_rhs );
         void Subtract( Vector3 const& i_rhs );
         void Scale( double const& i_scaleFactor );
