@@ -23,12 +23,14 @@ namespace vec
         double Magnitude() const;
         double DotProduct( Vector2 const& i_rhs ) const;
         bool Equals( Vector2 const& i_rhs ) const;
+        void Normalize();
     };
 
-    Vector2 Add( Vector2 i_lhs, Vector2 const& i_rhs );
-    Vector2 Subtract( Vector2 i_lhs, Vector2 const& i_rhs );
-    Vector2 Scale( Vector2 i_lhs, double const& i_rhs );
+    Vector2 Add( Vector2 c_lhs, Vector2 const& i_rhs );
+    Vector2 Subtract( Vector2 c_lhs, Vector2 const& i_rhs );
+    Vector2 Scale( Vector2 c_lhs, double const& i_rhs );
     double DotProduct( Vector2 const& i_lhs, Vector2 const& i_rhs );
+    Vector2 Normalize( Vector2 c_vector );
 }
 
 #endif	/* VECTOR2_HPP */

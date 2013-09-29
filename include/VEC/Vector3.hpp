@@ -23,13 +23,15 @@ namespace vec
         double Magnitude() const;
         double DotProduct( Vector3 const& i_rhs ) const;
         bool Equals( Vector3 const& i_rhs ) const;
+        void Normalize();
     };
 
-    Vector3 Add( Vector3 i_lhs, Vector3 const& i_rhs );
-    Vector3 Subtract( Vector3 i_lhs, Vector3 const& i_rhs );
-    Vector3 Scale( Vector3 i_lhs, double const& i_rhs );
+    Vector3 Add( Vector3 c_lhs, Vector3 const& i_rhs );
+    Vector3 Subtract( Vector3 c_lhs, Vector3 const& i_rhs );
+    Vector3 Scale( Vector3 c_lhs, double const& i_rhs );
     double DotProduct( Vector3 const& i_lhs, Vector3 const& i_rhs );
     Vector3 CrossProduct( Vector3 const& i_lhs, Vector3 const& i_rhs );
+    Vector3 Normalize( Vector3 c_vector );
 }
 #endif	/* VECTOR3_HPP */
 

@@ -60,22 +60,33 @@ namespace vec
         return ( m_data[ 0 ] == i_rhs[ 0 ] && m_data[ 1 ] == i_rhs[ 1 ] && m_data[ 2 ] == i_rhs[ 2 ] );
     }
 
-    Vector3 Add( Vector3 i_lhs, Vector3 const& i_rhs )
+    void Vector3::Normalize()
     {
-        i_lhs.Add( i_rhs );
-        return i_lhs;
+        double const magnitude ( Magnitude() );
+
+        assert( magnitude != 0.0 );
+
+        m_data[ 0 ] /= magnitude;
+        m_data[ 1 ] /= magnitude;
+        m_data[ 2 ] /= magnitude;
     }
 
-    Vector3 Subtract( Vector3 i_lhs, Vector3 const& i_rhs )
+    Vector3 Add( Vector3 c_lhs, Vector3 const& i_rhs )
     {
-        i_lhs.Subtract( i_rhs );
-        return i_lhs;
+        c_lhs.Add( i_rhs );
+        return c_lhs;
     }
 
-    Vector3 Scale( Vector3 i_lhs, double const& i_rhs )
+    Vector3 Subtract( Vector3 c_lhs, Vector3 const& i_rhs )
     {
-        i_lhs.Scale( i_rhs );
-        return i_lhs;
+        c_lhs.Subtract( i_rhs );
+        return c_lhs;
+    }
+
+    Vector3 Scale( Vector3 c_lhs, double const& i_rhs )
+    {
+        c_lhs.Scale( i_rhs );
+        return c_lhs;
     }
 
     double DotProduct( Vector3 const& i_lhs, Vector3 const& i_rhs )
@@ -92,5 +103,11 @@ namespace vec
         Vector3 const crossProduct = { { xComponent, yComponent, zComponent } };
 
         return crossProduct;
+    }
+
+    Vector3 Normalize( Vector3 c_vector )
+    {
+        c_vector.Normalize();
+        return c_vector;
     }
 }

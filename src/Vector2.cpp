@@ -57,26 +57,42 @@ namespace vec
         return ( m_data[ 0 ] == i_rhs[ 0 ] && m_data[ 1 ] == i_rhs[ 1 ] );
     }
 
-    Vector2 Add( Vector2 i_lhs, Vector2 const& i_rhs )
+    void Vector2::Normalize()
     {
-        i_lhs.Add( i_rhs );
-        return i_lhs;
+        double const magnitude ( Magnitude() );
+
+        assert( magnitude != 0.0 );
+
+        m_data[ 0 ] /= magnitude;
+        m_data[ 1 ] /= magnitude;
     }
 
-    Vector2 Subtract( Vector2 i_lhs, Vector2 const& i_rhs )
+    Vector2 Add( Vector2 c_lhs, Vector2 const& i_rhs )
     {
-        i_lhs.Subtract( i_rhs );
-        return i_lhs;
+        c_lhs.Add( i_rhs );
+        return c_lhs;
     }
 
-    Vector2 Scale( Vector2 i_lhs, double const& i_rhs )
+    Vector2 Subtract( Vector2 c_lhs, Vector2 const& i_rhs )
     {
-        i_lhs.Scale( i_rhs );
-        return i_lhs;
+        c_lhs.Subtract( i_rhs );
+        return c_lhs;
+    }
+
+    Vector2 Scale( Vector2 c_lhs, double const& i_rhs )
+    {
+        c_lhs.Scale( i_rhs );
+        return c_lhs;
     }
 
     double DotProduct( Vector2 const& i_lhs, Vector2 const& i_rhs )
     {
         return i_lhs.DotProduct( i_rhs );
+    }
+
+    Vector2 Normalize( Vector2 c_vector )
+    {
+        c_vector.Normalize();
+        return c_vector;
     }
 }
