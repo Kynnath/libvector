@@ -29,6 +29,7 @@ namespace vec
     Vector2 Add( Vector2 c_lhs, Vector2 const& i_rhs );
     Vector2 Subtract( Vector2 c_lhs, Vector2 const& i_rhs );
     Vector2 Scale( Vector2 c_lhs, double const& i_rhs );
+    double Magnitude( Vector2 const& i_vector );
     double DotProduct( Vector2 const& i_lhs, Vector2 const& i_rhs );
     Vector2 Normalize( Vector2 c_vector );
 }

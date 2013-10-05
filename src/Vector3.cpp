@@ -89,6 +89,11 @@ namespace vec
         return c_lhs;
     }
 
+    double Magnitude( Vector3 const& i_vector )
+    {
+        return i_vector.Magnitude();
+    }
+
     double DotProduct( Vector3 const& i_lhs, Vector3 const& i_rhs )
     {
         return i_lhs.DotProduct( i_rhs );
