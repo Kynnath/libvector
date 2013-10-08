@@ -38,12 +38,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/Vector2.o \
 	${OBJECTDIR}/src/Vector3.o
 
-# Test Directory
-TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
-
-# Test Files
-TESTFILES= \
-	${TESTDIR}/TestFiles/f1
 
 # C Compiler Flags
 CFLAGS=
@@ -83,54 +77,6 @@ ${OBJECTDIR}/src/Vector3.o: src/Vector3.cpp
 
 # Subprojects
 .build-subprojects:
-
-# Build Test Targets
-.build-tests-conf: .build-conf ${TESTFILES}
-${TESTDIR}/TestFiles/f1: ${TESTDIR}/src/tests/VectorTest.o ${OBJECTFILES:%.o=%_nomain.o}
-	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc}   -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS} 
-
-
-${TESTDIR}/src/tests/VectorTest.o: src/tests/VectorTest.cpp 
-	${MKDIR} -p ${TESTDIR}/src/tests
-	${RM} $@.d
-	$(COMPILE.cc) -O3 -Wall -s -DNDEBUG -Iinclude -I. -std=c++11 -MMD -MP -MF $@.d -o ${TESTDIR}/src/tests/VectorTest.o src/tests/VectorTest.cpp
-
-
-${OBJECTDIR}/src/Vector2_nomain.o: ${OBJECTDIR}/src/Vector2.o src/Vector2.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/src/Vector2.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O3 -Wall -s -DNDEBUG -Iinclude -std=c++11 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Vector2_nomain.o src/Vector2.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/src/Vector2.o ${OBJECTDIR}/src/Vector2_nomain.o;\
-	fi
-
-${OBJECTDIR}/src/Vector3_nomain.o: ${OBJECTDIR}/src/Vector3.o src/Vector3.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
-	@NMOUTPUT=`${NM} ${OBJECTDIR}/src/Vector3.o`; \
-	if (echo "$$NMOUTPUT" | ${GREP} '|main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T main$$') || \
-	   (echo "$$NMOUTPUT" | ${GREP} 'T _main$$'); \
-	then  \
-	    ${RM} $@.d;\
-	    $(COMPILE.cc) -O3 -Wall -s -DNDEBUG -Iinclude -std=c++11 -Dmain=__nomain -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/Vector3_nomain.o src/Vector3.cpp;\
-	else  \
-	    ${CP} ${OBJECTDIR}/src/Vector3.o ${OBJECTDIR}/src/Vector3_nomain.o;\
-	fi
-
-# Run Test Targets
-.test-conf:
-	@if [ "${TEST}" = "" ]; \
-	then  \
-	    ${TESTDIR}/TestFiles/f1 || true; \
-	else  \
-	    ./${TEST} || true; \
-	fi
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}

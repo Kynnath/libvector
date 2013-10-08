@@ -45,14 +45,19 @@ namespace vec
         m_data[ 2 ] *= i_scaleFactor;
     }
 
-    double Vector3::Magnitude() const
-    {
-        return sqrt( DotProduct( *this ) );
-    }
-
     double Vector3::DotProduct( Vector3 const& i_rhs ) const
     {
         return ( m_data[ 0 ] * i_rhs[ 0 ] + m_data[ 1 ] * i_rhs[ 1 ] + m_data[ 2 ] * i_rhs[ 2 ] );
+    }
+
+    double Vector3::MagnitudeSquared() const
+    {
+        return DotProduct( *this );
+    }
+
+    double Vector3::Magnitude() const
+    {
+        return sqrt( MagnitudeSquared() );
     }
 
     bool Vector3::Equals( Vector3 const& i_rhs ) const
@@ -89,14 +94,19 @@ namespace vec
         return c_lhs;
     }
 
-    double Magnitude( Vector3 const& i_vector )
-    {
-        return i_vector.Magnitude();
-    }
-
     double DotProduct( Vector3 const& i_lhs, Vector3 const& i_rhs )
     {
         return i_lhs.DotProduct( i_rhs );
+    }
+
+    double MagnitudeSquared( Vector3 const& i_vector )
+    {
+        return i_vector.MagnitudeSquared();
+    }
+
+    double Magnitude( Vector3 const& i_vector )
+    {
+        return i_vector.Magnitude();
     }
 
     Vector3 CrossProduct( Vector3 const& i_lhs, Vector3 const& i_rhs )
