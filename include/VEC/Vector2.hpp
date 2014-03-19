@@ -8,11 +8,13 @@
 #ifndef VECTOR2_HPP
 #define	VECTOR2_HPP
 
+#include <array>
+
 namespace vec
 {
     struct Vector2
     {
-        double m_data[ 2 ];
+        std::array<double,2> m_data;
 
         Vector2() = default;
         double & operator[]( int const& i_arrayIndex );

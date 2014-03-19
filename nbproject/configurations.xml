@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="89">
+<configurationDescriptor version="90">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <logicalFolder name="VEC" displayName="VEC" projectFiles="true">
-        <itemPath>include/VEC/Vector2.hpp</itemPath>
-        <itemPath>include/VEC/Vector3.hpp</itemPath>
+      <logicalFolder name="include" displayName="include" projectFiles="true">
+        <logicalFolder name="VEC" displayName="VEC" projectFiles="true">
+          <itemPath>include/VEC/Vector2.hpp</itemPath>
+          <itemPath>include/VEC/Vector3.hpp</itemPath>
+        </logicalFolder>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -34,15 +36,13 @@
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
-    <Elem>../../../../juan.garibotti/Documents/NetBeansProjects/libvector/src</Elem>
-    <Elem>../../../../juan.garibotti/Documents/NetBeansProjects/libvector/include</Elem>
-    <Elem>include/VEC</Elem>
+    <Elem>src</Elem>
+    <Elem>include</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug" type="3">
       <toolsSet>
-        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
@@ -53,27 +53,12 @@
           <incDir>
             <pElem>include</pElem>
           </incDir>
+          <commandLine>-Wfatal-errors -Wall -Wextra -pedantic -Winit-self -Wmissing-include-dirs -Wswitch-default -Wswitch-enum -Wfloat-equal -Wshadow -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wsign-conversion -Wlogical-op -Wmissing-declarations -Wmissing-noreturn -Wmissing-format-attribute -Wpacked -Wpadded -Wredundant-decls -Wunreachable-code</commandLine>
           <warningLevel>2</warningLevel>
         </ccTool>
         <archiverTool>
-          <output>lib/liblibvector-d.a</output>
         </archiverTool>
       </compileType>
-      <folder path="TestFiles/f1">
-        <cTool>
-          <incDir>
-            <pElem>.</pElem>
-          </incDir>
-        </cTool>
-        <ccTool>
-          <incDir>
-            <pElem>.</pElem>
-          </incDir>
-        </ccTool>
-        <linkerTool>
-          <output>${TESTDIR}/TestFiles/f1</output>
-        </linkerTool>
-      </folder>
       <item path="include/VEC/Vector2.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/VEC/Vector3.hpp" ex="false" tool="3" flavor2="0">
@@ -85,7 +70,6 @@
     </conf>
     <conf name="Release" type="3">
       <toolsSet>
-        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
         <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
@@ -95,16 +79,7 @@
           <developmentMode>5</developmentMode>
         </cTool>
         <ccTool>
-          <developmentMode>6</developmentMode>
-          <stripSymbols>true</stripSymbols>
-          <standard>8</standard>
-          <incDir>
-            <pElem>include</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>NDEBUG</Elem>
-          </preprocessorList>
-          <warningLevel>2</warningLevel>
+          <developmentMode>5</developmentMode>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
@@ -113,24 +88,8 @@
           <developmentMode>5</developmentMode>
         </asmTool>
         <archiverTool>
-          <output>lib/liblibvector.a</output>
         </archiverTool>
       </compileType>
-      <folder path="TestFiles/f1">
-        <cTool>
-          <incDir>
-            <pElem>.</pElem>
-          </incDir>
-        </cTool>
-        <ccTool>
-          <incDir>
-            <pElem>.</pElem>
-          </incDir>
-        </ccTool>
-        <linkerTool>
-          <output>${TESTDIR}/TestFiles/f1</output>
-        </linkerTool>
-      </folder>
       <item path="include/VEC/Vector2.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/VEC/Vector3.hpp" ex="false" tool="3" flavor2="0">

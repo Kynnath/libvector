@@ -10,9 +10,8 @@
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
-                <sourceRootElem>../../../../juan.garibotti/Documents/NetBeansProjects/libvector/src</sourceRootElem>
-                <sourceRootElem>../../../../juan.garibotti/Documents/NetBeansProjects/libvector/include</sourceRootElem>
-                <sourceRootElem>include/VEC</sourceRootElem>
+                <sourceRootElem>src</sourceRootElem>
+                <sourceRootElem>include</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
@@ -24,6 +23,9 @@
                     <type>3</type>
                 </confElem>
             </confList>
+            <formatting>
+                <project-formatting-style>false</project-formatting-style>
+            </formatting>
         </data>
     </configuration>
 </project>

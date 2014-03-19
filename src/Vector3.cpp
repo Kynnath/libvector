@@ -9,19 +9,20 @@
 
 #include <cassert>
 #include <cmath>
+#include <cstring>
 
 namespace vec
 {
     double & Vector3::operator []( int const& i_arrayIndex )
     {
         assert( i_arrayIndex >= 0 && i_arrayIndex < 3 );
-        return m_data[ i_arrayIndex ];
+        return m_data[ (long long unsigned int)i_arrayIndex ];
     }
 
     double const& Vector3::operator []( int const& i_arrayIndex ) const
     {
         assert( i_arrayIndex >= 0 && i_arrayIndex < 3 );
-        return m_data[ i_arrayIndex ];
+        return m_data[ (long long unsigned int)i_arrayIndex ];
     }
 
     void Vector3::Add( Vector3 const& i_rhs )
@@ -62,14 +63,14 @@ namespace vec
 
     bool Vector3::Equals( Vector3 const& i_rhs ) const
     {
-        return ( m_data[ 0 ] == i_rhs[ 0 ] && m_data[ 1 ] == i_rhs[ 1 ] && m_data[ 2 ] == i_rhs[ 2 ] );
+        return ( !memcmp( this, &i_rhs, sizeof( Vector3 ) ) );
     }
 
     void Vector3::Normalize()
     {
         double const magnitude ( Magnitude() );
 
-        assert( magnitude != 0.0 );
+        assert( magnitude > 0.0 );
 
         m_data[ 0 ] /= magnitude;
         m_data[ 1 ] /= magnitude;

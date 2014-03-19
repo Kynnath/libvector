@@ -9,19 +9,20 @@
 
 #include <cassert>
 #include <cmath>
+#include <cstring>
 
 namespace vec
 {
     double & Vector2::operator []( int const& i_arrayIndex )
     {
         assert( i_arrayIndex >= 0 && i_arrayIndex < 2 );
-        return m_data[ i_arrayIndex ];
+        return m_data[ (long long unsigned int)i_arrayIndex ];
     }
 
     double const& Vector2::operator []( int const& i_arrayIndex ) const
     {
         assert( i_arrayIndex >= 0 && i_arrayIndex < 2 );
-        return m_data[ i_arrayIndex ];
+        return m_data[ (long long unsigned int)i_arrayIndex ];
     }
 
     void Vector2::Add( Vector2 const& i_rhs )
@@ -54,14 +55,14 @@ namespace vec
 
     bool Vector2::Equals( Vector2 const& i_rhs ) const
     {
-        return ( m_data[ 0 ] == i_rhs[ 0 ] && m_data[ 1 ] == i_rhs[ 1 ] );
+        return ( !memcmp( this, &i_rhs, sizeof( Vector2 ) ) );
     }
 
     void Vector2::Normalize()
     {
         double const magnitude ( Magnitude() );
 
-        assert( magnitude != 0.0 );
+        assert( magnitude > 0.0 );
 
         m_data[ 0 ] /= magnitude;
         m_data[ 1 ] /= magnitude;

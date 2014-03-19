@@ -8,11 +8,13 @@
 #ifndef VECTOR3_HPP
 #define	VECTOR3_HPP
 
+#include <array>
+
 namespace vec
 {
     struct Vector3
     {
-        double m_data[ 3 ];
+        std::array<double,3> m_data;
 
         Vector3() = default;
         double & operator[]( int const& i_arrayIndex );
