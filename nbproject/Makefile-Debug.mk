@@ -35,8 +35,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/Vector2.o \
-	${OBJECTDIR}/src/Vector3.o
+	${OBJECTDIR}/src/VEC/Vector2.o \
+	${OBJECTDIR}/src/VEC/Vector3.o
 
 
 # C Compiler Flags
@@ -65,15 +65,15 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibvector.a: ${OBJECTFILES}
 	${AR} -rv ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibvector.a ${OBJECTFILES} 
 	$(RANLIB) ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibvector.a
 
-${OBJECTDIR}/src/Vector2.o: src/Vector2.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
+${OBJECTDIR}/src/VEC/Vector2.o: src/VEC/Vector2.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/VEC
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Vector2.o src/Vector2.cpp
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/VEC/Vector2.o src/VEC/Vector2.cpp
 
-${OBJECTDIR}/src/Vector3.o: src/Vector3.cpp 
-	${MKDIR} -p ${OBJECTDIR}/src
+${OBJECTDIR}/src/VEC/Vector3.o: src/VEC/Vector3.cpp 
+	${MKDIR} -p ${OBJECTDIR}/src/VEC
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Vector3.o src/Vector3.cpp
+	$(COMPILE.cc) -g -Wall -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/VEC/Vector3.o src/VEC/Vector3.cpp
 
 # Subprojects
 .build-subprojects:
