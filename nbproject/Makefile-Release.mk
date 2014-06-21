@@ -68,12 +68,12 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/liblibvector.a: ${OBJECTFILES}
 ${OBJECTDIR}/src/VEC/Vector2.o: src/VEC/Vector2.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/VEC
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -Wall -s -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/VEC/Vector2.o src/VEC/Vector2.cpp
+	$(COMPILE.cc) -O2 -Wall -s -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/VEC/Vector2.o src/VEC/Vector2.cpp
 
 ${OBJECTDIR}/src/VEC/Vector3.o: src/VEC/Vector3.cpp 
 	${MKDIR} -p ${OBJECTDIR}/src/VEC
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -Wall -s -Iinclude -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/VEC/Vector3.o src/VEC/Vector3.cpp
+	$(COMPILE.cc) -O2 -Wall -s -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/VEC/Vector3.o src/VEC/Vector3.cpp
 
 # Subprojects
 .build-subprojects:

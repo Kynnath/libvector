@@ -5,7 +5,7 @@
  * Created on 6 de septiembre de 2013, 15:16
  */
 
-#include "VEC/Vector2.hpp"
+#include "Vector2.hpp"
 
 #include <cassert>
 #include <cmath>

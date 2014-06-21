@@ -4,6 +4,8 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>src/VEC/Vector2.hpp</itemPath>
+      <itemPath>src/VEC/Vector3.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -13,9 +15,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>src/VEC/Vector2.cpp</itemPath>
-      <itemPath>src/VEC/Vector2.hpp</itemPath>
       <itemPath>src/VEC/Vector3.cpp</itemPath>
-      <itemPath>src/VEC/Vector3.hpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -43,9 +43,6 @@
       <compileType>
         <ccTool>
           <standard>8</standard>
-          <incDir>
-            <pElem>include</pElem>
-          </incDir>
           <commandLine>-Wfatal-errors -Wall -Wextra -pedantic -Winit-self -Wmissing-include-dirs -Wswitch-default -Wswitch-enum -Wfloat-equal -Wshadow -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wsign-conversion -Wlogical-op -Wmissing-declarations -Wmissing-noreturn -Wmissing-format-attribute -Wpacked -Wpadded -Wredundant-decls -Wunreachable-code</commandLine>
           <warningLevel>2</warningLevel>
         </ccTool>
@@ -75,9 +72,6 @@
           <developmentMode>5</developmentMode>
           <stripSymbols>true</stripSymbols>
           <standard>8</standard>
-          <incDir>
-            <pElem>include</pElem>
-          </incDir>
           <commandLine>-Wfatal-errors -Wall -Wextra -pedantic -Winit-self -Wmissing-include-dirs -Wswitch-default -Wswitch-enum -Wfloat-equal -Wshadow -Wcast-qual -Wcast-align -Wwrite-strings -Wconversion -Wsign-conversion -Wlogical-op -Wmissing-declarations -Wmissing-noreturn -Wmissing-format-attribute -Wpacked -Wpadded -Wredundant-decls -Wunreachable-code</commandLine>
           <warningLevel>2</warningLevel>
         </ccTool>
